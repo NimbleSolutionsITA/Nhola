@@ -1,0 +1,10 @@
+.th-dropdownmenu li a {
+    cursor: pointer;
+}
+@media (max-width:1199px) {
+    .th-addressbox li:nth-child(1),
+    .th-addressbox li:nth-child(2) {
+        width: 248px;
+    }
+
+}

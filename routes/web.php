@@ -11,9 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Pages routes
+Route::get('/', 'ContentController@index');
+Route::get('/la-struttura/{anchor?}', 'ContentController@struttura');
+Route::get('/attivita', 'ContentController@attivita');
+Route::get('/accoglienza', 'ContentController@accoglienza');
+Route::get('/medici', 'ContentController@medici');
+Route::get('/contatti', 'ContentController@contatti');
+Route::get('/news', 'ContentController@news');
+
+// Language route
+Route::post('language-chooser', 'LanguageController@changeLanguage');
+
+Route::post('/language/', array(
+        'before' => 'csrf',
+        'as' => 'language-chooser',
+        'uses' => 'LanguageController@changeLanguage',
+    )
+);
 
 
 Route::group(['prefix' => 'admin'], function () {

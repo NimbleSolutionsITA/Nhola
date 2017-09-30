@@ -1,7 +1,7 @@
 # Nhola
 ## Setup
 - download/clone the git repository from
-  - `git clone https://github.com/paslandau/laravelexample.git`
+  - `git clone https://github.com/maxolino/Nhola`
 - navigate into the project folder
   - `cd laravelexample`
 - make sure not to work directly on the master branch  
