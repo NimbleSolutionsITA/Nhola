@@ -18,6 +18,7 @@ class CreateContentsTable extends Migration
             $table->string('key');
             $table->string('locale');
             $table->string('title');
+            $table->string('icon');
             $table->text('body');
             $table->timestamps();
         });

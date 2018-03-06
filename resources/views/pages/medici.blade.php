@@ -1,16 +1,18 @@
 
 @extends('main')
 
-@section('title', 'MEDICI')
+@section('title', trans('app.doctors'))
 
 @section('content')
+
+    @include('pages.partials.breadcrumb')
 
     <!--************************************
             Main Start
     *************************************-->
     <main id="th-main" class="th-main th-haslayout">
 
-        @include('widgets.doctor_team')
+        @include('pages.partials.doctors-gallery')
 
     </main>
     <!--************************************

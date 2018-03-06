@@ -95,6 +95,7 @@ jQuery(document).ready(function() {
 	var isotopeTimer = window.setTimeout(function () {
 		window.clearTimeout(isotopeTimer);
 		doIsotopeFilter();
+        $('.th-projects').isotope({ filter: '.heads' });
 	}, 1000);
 	/* -------------------------------------
 			SLIDER

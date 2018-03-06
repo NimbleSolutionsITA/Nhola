@@ -16,10 +16,14 @@ class CreateDoctorsTable extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('surname');
+            $table->string('fullname')->storedAs(CONCAT(name, ' ', surname));
             $table->string('gender');
             $table->string('photo')->nullable();
             $table->string('cv')->nullable();
             $table->string('role');
+            $table->string('activity_it')->nullable();
+            $table->string('activity_en')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->timestamps();

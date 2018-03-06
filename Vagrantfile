@@ -17,6 +17,7 @@ require File.expand_path(confDir + '/scripts/homestead.rb')
 Vagrant.require_version '>= 1.9.0'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    config.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
     if File.exist? aliasesPath then
         config.vm.provision "file", source: aliasesPath, destination: "/tmp/bash_aliases"
         config.vm.provision "shell" do |s|

@@ -20,10 +20,13 @@
     <link rel="stylesheet" href="/css/template/color.css">
     <link rel="stylesheet" href="/css/template/responsive.css">
     <link rel="stylesheet" href="/css/template/transitions.css">
+    <link rel="stylesheet" href="/css/flaticon.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css" media="screen">
     <link rel="stylesheet" href="/css/custom.css">
     <script src="/js/template/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
-<body class="th-home">
+
+<body @if(Route::getCurrentRoute()->uri() == '/') class="th-home" @endif >
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -45,6 +48,7 @@
 @include('appointment')
 
 <script src="/js/template/vendor/jquery-library.js"></script>
+<script src="/js/template/vendor/jquery-ui.min.js"></script>
 <script src="/js/template/vendor/bootstrap.min.js"></script>
 <script src="/js/template/moment-with-locales.js"></script>
 <script src="/js/template/bootstrap-datetimepicker.min.js"></script>
@@ -58,6 +62,25 @@
 <script src="/js/template/appear.js"></script>
 <script src="/js/template/gmap3.js"></script>
 <script src="/js/template/themefunction.js"></script>
+<script src="/js/jquery.newsTicker.min.js"></script>
+<script src="/js/jquery.fancybox.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="/js/custom.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#headSearch").autocomplete({
+            source: {!! $doctorList !!},
+            appendTo: $("#headSearch").next(),
+            select: function( event, ui ) {
+                $("#docId").val( ui.item.url);
+                document.getElementById("appointmentForm").action = '/medici/'+ui.item.url+'/'+ui.item.value.toLowerCase().replace(/\s+/g, '-');
+            }
+        });
+    });
+</script>
+
+@yield('scripts')
+
 </body>
 </html>

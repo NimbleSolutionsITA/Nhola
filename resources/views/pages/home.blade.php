@@ -5,30 +5,22 @@
 
 @section('content')
 
-    @include('widgets.home_slider')
+    @include('pages.partials.home_slider')
 
     <!--************************************
             Main Start
     *************************************-->
     <main id="th-main" class="th-main th-haslayout">
 
-        @include('widgets.features_and_table')
+        @include('pages.partials.departments')
 
-        @include('widgets.statistics')
+        @include('pages.partials.services')
 
-        @include('widgets.services')
+        @include('pages.partials.statistics')
 
-        @include('widgets.newsletter')
+        @include('pages.partials.latest_news')
 
-        @include('widgets.gallery')
-
-        @include('widgets.doctor_team')
-
-        @include('widgets.testimonial')
-
-        @include('widgets.departments')
-
-        @include('widgets.latest_news')
+        @include('pages.partials.doctor_team')
 
     </main>
     <!--************************************

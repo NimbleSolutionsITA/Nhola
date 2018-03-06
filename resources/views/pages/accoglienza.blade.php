@@ -1,16 +1,19 @@
 
 @extends('main')
 
-@section('title', 'ACCOGLIENZA')
+@section('title', trans('app.hospitality'))
 
 @section('content')
+
+    @include('pages.partials.breadcrumb')
 
     <!--************************************
             Main Start
     *************************************-->
-    <main id="th-main" class="th-main th-haslayout">
+    <main id="th-main" class="th-haslayout">
 
-        @include('widgets.features_and_table')
+        @include('pages.partials.features_and_table')
+        @include('pages.partials.tabbed')
 
     </main>
     <!--************************************

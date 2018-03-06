@@ -7,53 +7,53 @@
             <div class="th-counters">
                 <div class="th-counter">
 								<span class="th-countericon">
-									<i class="fa fa-trophy"></i>
+									<i class="fa fa-bed"></i>
 								</span>
                     <div class="th-counterbox">
                         <div class="th-countertitle">
-                            <h2>Years of Experience</h2>
+                            <h2>{!!  trans('app.beds') !!}</h2>
                         </div>
                         <div class="th-count">
-                            <h3 data-from="0" data-to="125" data-speed="8000" data-refresh-interval="50">125</h3>
+                            <h3 data-from="0" data-to="144" data-speed="4000" data-refresh-interval="50">144</h3>
                         </div>
                     </div>
                 </div>
                 <div class="th-counter">
 								<span class="th-countericon">
-									<i class="fa fa-stethoscope"></i>
+									<i class="fa fa-money"></i>
 								</span>
                     <div class="th-counterbox">
                         <div class="th-countertitle">
-                            <h2>Number of Doctors</h2>
+                            <h2>{!! trans('app.accreditedBeds') !!}</h2>
                         </div>
                         <div class="th-count">
-                            <h3 data-from="0" data-to="1180" data-speed="8000" data-refresh-interval="50">1180</h3>
+                            <h3 data-from="0" data-to="51" data-speed="4000" data-refresh-interval="50">51</h3>
                         </div>
                     </div>
                 </div>
                 <div class="th-counter">
 								<span class="th-countericon">
-									<i class="fa fa-shield"></i>
+									<i class="fa fa-user-md"></i>
 								</span>
                     <div class="th-counterbox">
                         <div class="th-countertitle">
-                            <h2>Precious Awards</h2>
+                            <h2>{!!  trans('app.numDocs') !!}</h2>
                         </div>
                         <div class="th-count">
-                            <h3 data-from="0" data-to="650" data-speed="8000" data-refresh-interval="50">650</h3>
+                            <h3 data-from="0" data-to="91" data-speed="4000" data-refresh-interval="50">91</h3>
                         </div>
                     </div>
                 </div>
                 <div class="th-counter">
 								<span class="th-countericon">
-									<i class="fa fa-group"></i>
+									<i class="fa fa-h-square"></i>
 								</span>
                     <div class="th-counterbox">
                         <div class="th-countertitle">
-                            <h2>Our Happy Clients</h2>
+                            <h2>{!! trans('app.operatingRooms') !!}</h2>
                         </div>
                         <div class="th-count">
-                            <h3 data-from="0" data-to="1420" data-speed="8000" data-refresh-interval="50">1420</h3>
+                            <h3 data-from="0" data-to="9" data-speed="4000" data-refresh-interval="50">9</h3>
                         </div>
                     </div>
                 </div>

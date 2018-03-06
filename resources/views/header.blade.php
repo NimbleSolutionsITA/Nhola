@@ -12,7 +12,7 @@
                     <div class="th-rightarea">
                         <div class="th-topinfo">
                             <ul class="th-emails">
-                                <li><i class="fa fa-envelope-o"></i><a href="mailto:{{Voyager::setting('clinic_email')}}">{{Voyager::setting('clinic_email')}}</a></li>
+                                <li><i class="fa fa-envelope-o"></i><a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">{{ setting('informazioni-generali.email') }}</a></li>
                                 <!-- <li><i class="fa fa-life-ring"></i><a href="#">Help Desk</a></li> -->
                             </ul>
                             <!--
@@ -35,20 +35,24 @@
                                 </ul>
                                 <input type="hidden" name="_token" id="csrf_token" value="{{ csrf_token() }}">
                             </div>
+                            <ul class="newsticker">
+                                @foreach($posts as $post)
+                                    <li><a href="/news{{ $post->slug }}">{{ $post->title }}</a></li>
+                                @endforeach
+                            </ul>
                         </div>
                         <ul class="th-addressbox">
                             <li>
                                 <span class="th-addressicon"><a href="/contatti"><i class="fa fa-map-marker"></i></a></span>
                                 <div class="th-addresscontent">
-                                    <strong>{{Voyager::setting('clinic_address')}}</strong>
-                                    <span>{{Voyager::setting('clinic_address2')}}</span>
+                                    {!! setting('informazioni-generali.address') !!}
                                 </div>
                             </li>
                             <li>
                                 <span class="th-addressicon"><a href="/contatti"><i class="fa fa-phone"></i></a></span>
                                 <div class="th-addresscontent">
-                                    <strong>{{Voyager::setting('call_center')}}</strong>
-                                    <span>{{ trans('app.OpeningTime') }}: {{Voyager::setting('call_center_timesheet')}}</span>
+                                    <strong>{{ setting('informazioni-generali.reception') }}</strong>
+                                    <span>{{ trans('app.OpeningTime') }}: {{ setting('informazioni-generali.time') }}</span>
                                 </div>
                             </li>
                             <li>
@@ -76,18 +80,15 @@
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-                        @if(App::isLocale('it'))
-                            {{ menu('main', 'layouts.main_nav') }}
-                        @endif
-                        @if(App::isLocale('en'))
-                            {{ menu('main_en', 'layouts.main_nav') }}
-                        @endif
+                        {{ menu('main_'.App::getLocale(), 'layouts.main_nav') }}
                     </nav>
                     <div class="th-widgetsearch">
-                        <form action="index_submit" method="post">
+                        <form action="" method="POST" id="appointmentForm">
+                            {{ csrf_field() }}
                             <fieldset>
-                                <input type="search" name="search" class="form-control" placeholder="{{ trans('app.FindDoctor') }}">
+                                <input id="headSearch" type="text" name="search" class="form-control" placeholder="{{ trans('app.FindDoctor') }}">
                                 <button type="submit"><i class="fa fa-search"></i></button>
+                                <input id="docId" type="hidden" name="id">
                             </fieldset>
                         </form>
                     </div>

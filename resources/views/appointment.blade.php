@@ -7,7 +7,9 @@
                         <i><img src="/images/icon/img-25.png" alt="image description"></i>
                         <h3>For Appointment<span>No Need for A Queue</span></h3>
                     </div>
-                    <form class="th-formappointment">
+                    <form class="th-formappointment" action="{{ url('headForm') }}" method="POST">
+                        {{ csrf_field() }}
+                        {!! honeypot('honeypot_name', 'honeypot_time') !!}
                         <fieldset>
                             <div class="form-group">
                                 <input type="text" name="enteryourname" class="form-control" placeholder="Name">
